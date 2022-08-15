@@ -7,6 +7,8 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  background-color: #0e565d;
+  color :#ffffff
 }
 .commande{
   display: flex;
@@ -28,7 +30,7 @@ p{
 }
 
 .Countdown{
-  border : 2px solid black;
+  border : 4px solid #0b363b;
   width : 400px;
   margin-left: auto;
   margin-right: auto;
