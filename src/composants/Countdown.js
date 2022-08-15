@@ -1,8 +1,10 @@
-function Countdown() {
+function Countdown({sess, paus}) {
+  const session = sess;
+  const pause= paus;
     return (
       <div className="Countdown">
         <h4 className="title_session">session</h4>
-        <p className="timer"> 00 : 00</p>
+        <p className="timer"> {session} : {pause}</p>
         
       </div>
     );
