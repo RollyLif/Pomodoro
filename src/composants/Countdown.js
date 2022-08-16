@@ -3,8 +3,8 @@ function Countdown({sess, paus}) {
   const pause= paus;
     return (
       <div className="Countdown">
-        <h4 className="title_session">session</h4>
-        <p className="timer"> {session} : {pause}</p>
+        <h4 id="timer-label" className="title_session">session</h4>
+        <p id="time-left" className="timer"> {session} : {pause}</p>
         
       </div>
     );

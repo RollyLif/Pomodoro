@@ -2,6 +2,7 @@ import Countdown from "./Countdown";
 import {AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
 import {BsFillPlayFill} from 'react-icons/bs';
 import {GrPowerCycle} from 'react-icons/gr';
+import { useState } from 'react';
 
 let pause = 6;
 let session= 27;
@@ -21,14 +22,14 @@ function Body() {
   
       <div className="Body">
         <section className="commande">
-            <div className="nav">
+            <div className="nav" id="break-label">
                 <h2>Break Length</h2>
-                <p> <AiOutlineArrowDown onClick={decrementer(pause)}/> {pause} <AiOutlineArrowUp onClick={incrementer(pause)}/> </p>
+                <p> <AiOutlineArrowDown id="break-decrement" onClick={decrementer(pause)}/> <span id="break-length">{pause} </span> <AiOutlineArrowUp id="break-increment" onClick={incrementer(pause)}/> </p>
 
             </div>
-            <div className="nav">
+            <div className="nav" id="session-label">
                 <h2>Session Length</h2>
-                <p> <AiOutlineArrowDown onClick={decrementer(session)}/> {session} <AiOutlineArrowUp onClick={incrementer(session)}/> </p>
+                <p> <AiOutlineArrowDown id="session-decrement" onClick={decrementer(session)}/> <span id="session-length">{session} </span> <AiOutlineArrowUp id="session-increment" onClick={incrementer(session)}/> </p>
 
             </div>
             <div>
@@ -38,8 +39,8 @@ function Body() {
         </section>
         <Countdown sess={session} paus={pause}/>
         <section className="Marche">
-          <BsFillPlayFill/>
-          <GrPowerCycle/>
+          <BsFillPlayFill id="start_stop"/>
+          <GrPowerCycle id="reset"/>
         </section>
       </div>
     );
