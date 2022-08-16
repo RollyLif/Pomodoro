@@ -31,7 +31,8 @@ function Body() {
         <Countdown sess={session} paus={pause}/>
         <section className="Marche">
           <BsFillPlayFill id="start_stop"/>
-          <GrPowerCycle id="reset"/>
+          <GrPowerCycle id="reset" onClick={() => {updateSession(25); 
+                                                   updatePause(5);}}/>
         </section>
       </div>
     );
