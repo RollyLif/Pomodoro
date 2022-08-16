@@ -4,32 +4,23 @@ import {BsFillPlayFill} from 'react-icons/bs';
 import {GrPowerCycle} from 'react-icons/gr';
 import { useState } from 'react';
 
-let pause = 6;
-let session= 27;
-
-function incrementer(value){
-  return value++;
-}
-
-function decrementer(value){
-  if(value>0){
-    return value--;
-  }
-}
 
 function Body() {
+
+  const [pause, updatePause] = useState(5)
+  const [session, updateSession]= useState(25);
     return (
   
       <div className="Body">
         <section className="commande">
             <div className="nav" id="break-label">
                 <h2>Break Length</h2>
-                <p> <AiOutlineArrowDown id="break-decrement" onClick={decrementer(pause)}/> <span id="break-length">{pause} </span> <AiOutlineArrowUp id="break-increment" onClick={incrementer(pause)}/> </p>
+                <p> <AiOutlineArrowDown id="break-decrement" onClick={() => updatePause(pause === 0 ? pause : pause-1)}/> <span id="break-length">{pause} </span> <AiOutlineArrowUp id="break-increment" onClick={() => updatePause(pause +1)}/> </p>
 
             </div>
             <div className="nav" id="session-label">
                 <h2>Session Length</h2>
-                <p> <AiOutlineArrowDown id="session-decrement" onClick={decrementer(session)}/> <span id="session-length">{session} </span> <AiOutlineArrowUp id="session-increment" onClick={incrementer(session)}/> </p>
+                <p> <AiOutlineArrowDown id="session-decrement" onClick={() => updateSession(session === 0 ? session : session-1)}/> <span id="session-length">{session} </span> <AiOutlineArrowUp id="session-increment" onClick={() => updateSession(session+1)}/> </p>
 
             </div>
             <div>
